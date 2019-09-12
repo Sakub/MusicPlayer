@@ -3,10 +3,12 @@ trackList = []
 trackNumber = 0
 
 def check():
-    path="./Music/"
+    global trackNumber
+    path="Music"
     for file in os.listdir(path):
-        if file.endswith("*.mp3"):
-            print (os.path.join(path, file))
+        if file.endswith(".mp3"):
+            print (trackNumber,". ", file, sep="")
+            trackNumber += 1
 
 
 print("Welcome in the music player!")
