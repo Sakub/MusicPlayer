@@ -7,10 +7,3 @@ All i can say is have fun :P.
 How to use:
 Make a folder in which you put this script, after that create folder Music in which
 you have to put all your songs.
-It should look like this:
----MusicPlayer
-	|
-	----main.py
-	----Music
-		|
-		----your songs
