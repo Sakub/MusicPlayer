@@ -27,12 +27,33 @@ pygame.mixer.music.load("./Music/"+trackList[musicSelect])
 pygame.mixer.music.play()
 song = MP3("./Music/"+trackList[musicSelect])
 songLength = song.info.length
-print("Duration: ", round((songLength / 60), 2) - 0.22)
+
 print("...")
 print("Now playing: ", trackList[musicSelect])
+print("...")
+print("Duration: ", round((songLength / 60), 2) - 0.22)
 duration = songLength
 while duration > 0:
     duration -= 1
     time.sleep(1)
-print("That's all for early version, hope you enjoyed the music :D. Thanks for testing")
-    
+while True:
+    try:
+        musicSelect += 1
+        pygame.mixer.music.load("./Music/"+trackList[musicSelect])
+    except IndexError:
+        musicSelect = 0
+        pygame.mixer.music.load("./Music/"+trackList[musicSelect])
+    finally:
+        pygame.mixer.music.play()
+        song = MP3("./Music/"+trackList[musicSelect])
+        songLength = song.info.length
+        
+        print("...")
+        print("Now playing: ", trackList[musicSelect])
+        print("...")
+        print("Duration: ", round((songLength / 60), 2) - 0.22)
+        duration = songLength
+        while duration > 0:
+            duration -= 1
+            time.sleep(1)
+        
